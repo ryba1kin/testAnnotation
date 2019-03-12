@@ -11,6 +11,7 @@ public class Fab {
             for (Field field : aClass.getDeclaredFields()) {
                 if(field.isAnnotationPresent(MyField.class) && field.getAnnotation(MyField.class).name().equalsIgnoreCase(string)) {
                     field.setAccessible(true);
+                    System.out.println(field.toString());
                     System.out.println(field.get(aClass));
                 }
             }
